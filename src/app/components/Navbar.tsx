@@ -8,10 +8,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        className="shadow-md dark:bg-gray-900 fixed w-full z-50"
-        style={{ backgroundColor: "#011F4B" }}
-      >
+     <nav
+  className="fixed top-0 left-0 right-0 shadow-md dark:bg-gray-900 w-full z-50"
+  style={{ backgroundColor: '#011F4B' }}
+>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex-shrink-0 text-2xl font-extrabold text-blue-600 dark:text-white">
