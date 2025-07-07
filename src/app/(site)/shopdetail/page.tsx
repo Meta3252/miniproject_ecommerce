@@ -8,6 +8,7 @@ export default function ShopDetail() {
     const [quantity, setQuantity] = useState<number>(1);
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const totalPrice = 12000;
 
@@ -20,7 +21,7 @@ export default function ShopDetail() {
                     <Image
                         src="/images/graphic-card-cover.jpg" // ✅ เปลี่ยน path 
                         alt="RTX 3050 Ti"
-                        width={180} 
+                        width={180}
                         height={180}
                         className="object-contain"
                     />
@@ -93,8 +94,72 @@ export default function ShopDetail() {
                     {/* Buttons */}
                     <div className="flex justify-center gap-6 mt-10">
                         <button className="bg-black text-white px-6 py-2 rounded">Back</button>
-                        <button className="bg-black text-white px-6 py-2 rounded">Confirm</button>
+                        <button
+                            className="bg-black text-white px-6 py-2 rounded"
+                            onClick={() => setIsModalOpen(true)}
+                        >
+                            Confirm
+                        </button>
                     </div>
+
+                    {/* Modal */}
+                    {isModalOpen && (
+                        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                            <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl 2xl:max-w-6xl relative">
+                                {/* ปุ่มปิด */}
+                                <button
+                                    onClick={() => setIsModalOpen(false)}
+                                    className="absolute top-3 right-3 text-gray-500 hover:text-black text-xl"
+                                >
+                                    ×
+                                </button>
+
+                                <h2 className="text-center font-bold text-lg mb-6 text-black">Your Order #1254</h2>
+
+                                <div className="space-y-4 text-sm text-black">
+                                    <div>
+                                        <p className="font-bold">Product</p>
+                                        <p>GTX 1060</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Quantity</p>
+                                        <p>2 Ea</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Total Price</p>
+                                        <p>12000 Bath</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Name Customer</p>
+                                        <p>Test System</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold">Address</p>
+                                        <p>1512012 Thai</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-xs">
+                                            <span className="font-bold">Status: </span>
+                                            <span className="text-red-600">Waiting for transaction</span>
+                                        </p>
+                                    </div>
+                                    <p className="text-red-600 text-sm font-semibold mt-4">
+                                        *You can track your order via email.
+                                    </p>
+                                </div>
+
+                                {/* ปุ่ม Confirm ด้านล่าง */}
+                                <div className="flex justify-end mt-6">
+                                    <button
+                                        onClick={() => setIsModalOpen(false)}
+                                        className="bg-black text-white px-6 py-2 rounded"
+                                    >
+                                        Confirm
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

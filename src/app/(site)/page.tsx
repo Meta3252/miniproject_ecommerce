@@ -1,29 +1,36 @@
 // pages/index.tsx
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center bg-white">
-      {/* --- Banner Section --- */}
-      <section className="relative w-full h-[320px] sm:h-[360px] md:h-[400px] lg:h-[460px] xl:h-[500px]">
-        <div className="relative w-full h-full">
-          <Image
-            src="/images/Black_Electronic_Promo_Instagram_Post.png"
-            alt="Banner"
-            fill
-            style={{ objectFit: "contain", paddingTop: 64, background: "#1a1a1a" }}
-            sizes="(max-width: 768px) 100vw, 768px"
-          />
+      {/* --- Hero Section --- */}
+      <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] bg-black text-white">
+        {/* Background image */}
+        <Image
+          src="/images/Black_Electronic_Promo_Instagram_Post.png" // path รูปภาพ
+          alt="Hero Background"
+          fill
+          className="object-cover opacity-40"
+          priority
+        />
 
-          {/* ปุ่มวางที่ขวาล่าง แต่ไม่ติดขอบ */}
-          <div className="absolute bottom-6 right-6 z-10">
-            <button className="bg-white text-black px-6 py-2 rounded shadow font-semibold hover:bg-gray-200 text-sm">
+        {/* Overlay Content */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-extrabold">
+            Build Your Dream PC Today
+          </h1>
+          <p className="text-sm sm:text-base md:text-lg text-gray-200 max-w-xl mb-6">
+            Discover high-performance RAM, graphics cards, and components at unbeatable prices.
+          </p>
+          <Link href="/shop">
+            <button className="bg-white text-black px-6 py-3 rounded text-sm md:text-base hover:bg-gray-200 transition font-semibold px-8 py-3 rounded-md transition">
               SHOP NOW
             </button>
-          </div>
+          </Link>
         </div>
       </section>
-
 
       {/* --- Top Rated Properties Section --- */}
       <section className="w-full max-w-6xl px-6 py-10">
