@@ -23,7 +23,7 @@ export default function AboutPage() {
           </p>
           <a
             href="#about"
-            className="inline-block bg-[#85A9DF] hover:bg-[#6e96d0] text-[#011F4B] font-semibold px-8 py-3 rounded-md transition"
+            className="inline-block bg-[#85A9DF] hover:bg-[#6e96d0] font-semibold px-8 py-3 rounded-md transition"
           >
             Learn More
           </a>
