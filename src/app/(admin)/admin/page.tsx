@@ -6,8 +6,9 @@ export default function DashboardPage() {
       <h2 className="text-2xl font-semibold mb-4 text-black">Dashboard Overview</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <DashboardCard type="orders" />
-        <DashboardCard type="revenue" />
+        <DashboardCard type="Total" />
+        <DashboardCard type="Waiting for transaction" />
+        <DashboardCard type="Confirmed" />
       </div>
     </div>
   );
